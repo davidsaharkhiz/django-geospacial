@@ -1,19 +1,19 @@
 version: "3.9"
 
 services:
-  db:
+  db_container_1:
     image: postgres
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - ./data/db:/var/li/postgresql/data
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-  web:
+  website_container_2:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/code
+      - ./djangoProject:/code
     ports:
       - "8000:8000"
     environment:

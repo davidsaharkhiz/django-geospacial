@@ -6,5 +6,5 @@ WORKDIR /code
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 COPY ./djangoProject/ /code/
-RUN echo "DEBUG INFORMATION:"
+RUN echo "DEBUG INFORMATION INSIDE NEW CONTAINERS:"
 run ls -lah
